@@ -1,103 +1,245 @@
-import Image from "next/image";
+/* eslint-disable react/no-unescaped-entities */
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	return (
+		<div className='flex flex-col min-h-screen'>
+			<header className='border-b'>
+				<div className='container flex h-16 items-center justify-between py-4'>
+					<div className='flex items-center gap-2 font-bold text-xl'>
+						<span className='text-primary'>LinkedIn</span>
+						<span>Ghostwriter</span>
+					</div>
+					<div className='flex items-center gap-4'>
+						<Link href='/login'>
+							<Button variant='ghost'>Login</Button>
+						</Link>
+						<Link href='/signup'>
+							<Button>Sign Up</Button>
+						</Link>
+					</div>
+				</div>
+			</header>
+			<main className='flex-1'>
+				<section className='py-20 md:py-32 bg-gradient-to-b from-background to-muted'>
+					<div className='container px-4 md:px-6'>
+						<div className='grid gap-6 lg:grid-cols-2 lg:gap-12 items-center'>
+							<div className='flex flex-col justify-center space-y-4'>
+								<div className='space-y-2'>
+									<h1 className='text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none'>
+										Premium LinkedIn Content That Converts
+									</h1>
+									<p className='max-w-[600px] text-muted-foreground md:text-xl'>
+										AI-generated drafts with expert human editing for startup
+										founders who want to build their personal brand.
+									</p>
+								</div>
+								<div className='flex flex-col gap-2 min-[400px]:flex-row'>
+									<Link href='/signup'>
+										<Button
+											size='lg'
+											className='gap-1'
+										>
+											Get Started <ArrowRight className='h-4 w-4' />
+										</Button>
+									</Link>
+									<Link href='/pricing'>
+										<Button
+											size='lg'
+											variant='outline'
+										>
+											View Pricing
+										</Button>
+									</Link>
+								</div>
+							</div>
+							<div className='mx-auto lg:mx-0 relative'>
+								<div className='bg-white dark:bg-gray-950 rounded-lg shadow-lg p-6 border'>
+									<div className='space-y-4'>
+										<div className='space-y-2'>
+											<h3 className='text-xl font-bold'>
+												Sample LinkedIn Post
+											</h3>
+											<div className='text-sm text-muted-foreground'>
+												Generated by our AI
+											</div>
+										</div>
+										<div className='space-y-4 text-sm'>
+											<p className='font-medium'>
+												I turned down a $2M acquisition offer last week.
+												Everyone thinks I'm crazy.
+											</p>
+											<p>
+												When I launched my SaaS 3 years ago, I would have jumped
+												at this opportunity. But after nearly shutting down
+												twice and rebuilding our entire product from scratch, I
+												realized something important.
+											</p>
+											<p>
+												The metrics investors value rarely align with the impact
+												we want to make.
+											</p>
+											<p>
+												We're now profitable, growing steadily, and our team is
+												thriving. The freedom to build on our terms is worth
+												more than an exit that looks good on paper.
+											</p>
+											<p>
+												Would you rather build something valuable for the
+												long-term or optimize for a quick exit? #StartupTruths
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section className='py-12 md:py-24 bg-background'>
+					<div className='container px-4 md:px-6'>
+						<div className='flex flex-col items-center justify-center space-y-4 text-center'>
+							<div className='space-y-2'>
+								<h2 className='text-3xl font-bold tracking-tighter md:text-4xl'>
+									How It Works
+								</h2>
+								<p className='max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
+									Our unique approach combines AI-generated drafts with
+									professional human editing
+								</p>
+							</div>
+						</div>
+						<div className='mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12'>
+							<div className='flex flex-col justify-center space-y-4'>
+								<div className='flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary'>
+									<span className='font-bold text-xl'>1</span>
+								</div>
+								<div className='space-y-2'>
+									<h3 className='text-xl font-bold'>Generate AI Draft</h3>
+									<p className='text-muted-foreground'>
+										Input your topic and preferred tone, and our AI creates a
+										compelling first draft.
+									</p>
+								</div>
+							</div>
+							<div className='flex flex-col justify-center space-y-4'>
+								<div className='flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary'>
+									<span className='font-bold text-xl'>2</span>
+								</div>
+								<div className='space-y-2'>
+									<h3 className='text-xl font-bold'>Professional Editing</h3>
+									<p className='text-muted-foreground'>
+										Our expert editors refine your content to match your voice
+										and business goals.
+									</p>
+								</div>
+							</div>
+							<div className='flex flex-col justify-center space-y-4'>
+								<div className='flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary'>
+									<span className='font-bold text-xl'>3</span>
+								</div>
+								<div className='space-y-2'>
+									<h3 className='text-xl font-bold'>Publish & Grow</h3>
+									<p className='text-muted-foreground'>
+										Post high-quality content consistently and watch your
+										LinkedIn presence grow.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section className='py-12 md:py-24 bg-muted'>
+					<div className='container px-4 md:px-6'>
+						<div className='flex flex-col items-center justify-center space-y-4 text-center'>
+							<div className='space-y-2'>
+								<h2 className='text-3xl font-bold tracking-tighter md:text-4xl'>
+									Pricing
+								</h2>
+								<p className='max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
+									Simple, transparent pricing for founders who value their time
+								</p>
+							</div>
+						</div>
+						<div className='mx-auto max-w-md py-12'>
+							<div className='rounded-lg border bg-card text-card-foreground shadow-lg'>
+								<div className='flex flex-col p-6 space-y-2'>
+									<h3 className='text-2xl font-bold'>Premium Plan</h3>
+									<p className='text-muted-foreground'>
+										Everything you need to build your LinkedIn presence
+									</p>
+								</div>
+								<div className='p-6 pt-0'>
+									<div className='flex items-baseline gap-1'>
+										<span className='text-4xl font-bold'>$500</span>
+										<span className='text-muted-foreground'>/month</span>
+									</div>
+								</div>
+								<div className='p-6 pt-0 space-y-4'>
+									<ul className='space-y-2'>
+										<li className='flex items-center gap-2'>
+											<CheckCircle className='h-4 w-4 text-primary' />
+											<span>4 professionally edited posts per month</span>
+										</li>
+										<li className='flex items-center gap-2'>
+											<CheckCircle className='h-4 w-4 text-primary' />
+											<span>Unlimited AI draft generation</span>
+										</li>
+										<li className='flex items-center gap-2'>
+											<CheckCircle className='h-4 w-4 text-primary' />
+											<span>48-hour turnaround time</span>
+										</li>
+										<li className='flex items-center gap-2'>
+											<CheckCircle className='h-4 w-4 text-primary' />
+											<span>Personalized writing style</span>
+										</li>
+										<li className='flex items-center gap-2'>
+											<CheckCircle className='h-4 w-4 text-primary' />
+											<span>Content strategy consultation</span>
+										</li>
+									</ul>
+									<Link
+										href='/signup'
+										className='w-full'
+									>
+										<Button
+											size='lg'
+											className='w-full'
+										>
+											Subscribe Now
+										</Button>
+									</Link>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer className='border-t py-6 md:py-8'>
+				<div className='container flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between'>
+					<div className='text-center md:text-left'>
+						<p className='text-sm text-muted-foreground'>
+							&copy; {new Date().getFullYear()} LinkedIn Ghostwriter. All rights
+							reserved.
+						</p>
+					</div>
+					<div className='flex gap-4'>
+						<Link
+							href='/terms'
+							className='text-sm text-muted-foreground hover:underline'
+						>
+							Terms
+						</Link>
+						<Link
+							href='/privacy'
+							className='text-sm text-muted-foreground hover:underline'
+						>
+							Privacy
+						</Link>
+					</div>
+				</div>
+			</footer>
+		</div>
+	);
 }
